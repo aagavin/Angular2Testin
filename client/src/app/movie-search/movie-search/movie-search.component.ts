@@ -9,7 +9,10 @@ export class MovieSearchComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  private movieSearch(event){
+    // alert(event.target.value);
   }
 
 }
