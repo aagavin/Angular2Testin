@@ -1,0 +1,26 @@
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" *ngIf="movies.length !=0">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Poster</th>
+      <th class="mdl-data-table__cell--non-numeric">Title</th>
+      <th class="mdl-data-table__cell--non-numeric">Actors</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies">
+      <td class="mdl-data-table__cell--non-numeric">
+        <div *ngIf="movie.i">
+          <img style="width: 35%; float: left" src="{{movie.i[0]}}">
+        </div>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric"><h5>{{movie.l}}</h5></td>
+      <td class="mdl-data-table__cell--non-numeric">{{movie.s}}</td>
+      <td>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Add to favourites 
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

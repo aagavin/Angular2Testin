@@ -1,0 +1,9 @@
+.mdl-data-table {
+    table-layout:fixed;
+    width:100%;
+		white-space: normal!important;
+}
+
+td{
+  word-wrap:break-word;
+}
