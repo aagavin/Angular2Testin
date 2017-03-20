@@ -4,6 +4,7 @@
       <input (keyup)="movieSearch($event)" class="mdl-textfield__input" type="text" id="sample1" >
       <label class="mdl-textfield__label" for="sample1">Text...</label>
     </div>
+    <app-movie-list [query]="searchQuery"></app-movie-list>
     <div>
     </div>
   </div>

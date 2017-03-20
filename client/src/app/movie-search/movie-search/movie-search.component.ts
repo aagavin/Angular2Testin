@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieListComponent } from '../movie-list/movie-list.component';
 
 @Component({
   selector: 'app-movie-search',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieSearchComponent implements OnInit {
 
+  public searchQuery: String;
+  
   constructor() { }
 
   ngOnInit() {}
 
   private movieSearch(event){
-    // alert(event.target.value);
+    console.log(event.target.value);
+    this.searchQuery = event.target.value;
   }
 
 }
