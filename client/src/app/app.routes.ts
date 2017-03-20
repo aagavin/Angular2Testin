@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { MovieViewModule } from './movie-view/movie-view.module';
+import { MovieViewComponent } from './movie-view/components/movie-view/movie-view.component';
+import { MovieSearchComponent } from './movie-search/movie-search/movie-search.component';
 
 export const AppRoutes: Routes = [
-	{ path: 'dash', loadChildren: 'app/movie-view/movie-view.module#MovieViewModule' },
 	{ path: '**', redirectTo: '/' },
+	{ path: '', component: MovieSearchComponent }
 ]
