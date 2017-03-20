@@ -17,7 +17,7 @@
       <td class="mdl-data-table__cell--non-numeric"><h5>{{movie.l}}</h5></td>
       <td class="mdl-data-table__cell--non-numeric">{{movie.s}}</td>
       <td>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button (click)="addMovie(movie.id)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
         Add to favourites 
         </button>
       </td>

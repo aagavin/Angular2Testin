@@ -39,5 +39,16 @@ export class MovieListComponent implements OnInit, OnChanges {
   }
 
 
+  private addMovie(movieId: number):void{
+    this.movies.forEach((movie, index) => {
+      if(movie['id'] === movieId){
+
+        this.movies.splice(index,1);
+      }
+    })
+    
+  }
+
+
 }
 
