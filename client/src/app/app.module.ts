@@ -7,16 +7,22 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { MovieSearchModule } from './movie-search/movie-search.module';
+import { MovieViewModule } from './movie-view/movie-view.module';
+
+import { AppRoutes } from './app.routes';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MovieSearchModule
+    MovieViewModule,
+    MovieSearchModule,
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
