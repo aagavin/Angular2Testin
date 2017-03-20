@@ -12,13 +12,15 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Side</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" [routerLink]="[ '/dash' ]">Dash View</a>
       <a class="mdl-navigation__link" href="">Link</a>
       <a class="mdl-navigation__link" href="">Link</a>
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
-    <div class="page-content"><app-movie-search></app-movie-search></div>
+    <div class="page-content"><router-outlet></router-outlet>
+    </div>
+    <!--<app-movie-search></app-movie-search>-->
   </main>
 </div>
