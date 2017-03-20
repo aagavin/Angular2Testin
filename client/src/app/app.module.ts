@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { MovieSearchModule } from './movie-search/movie-search.module';
-import { MovieViewModule } from './movie-view/movie-view.module';
 
 import { AppRoutes } from './app.routes';
 
@@ -20,7 +19,6 @@ import { AppRoutes } from './app.routes';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MovieViewModule,
     MovieSearchModule,
     RouterModule.forRoot(AppRoutes)
   ],
