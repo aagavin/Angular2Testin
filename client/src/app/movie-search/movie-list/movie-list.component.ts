@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Http } from '@angular/http';
+import { MovieService } from '../../movie-view/services/movie.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -13,7 +14,7 @@ export class MovieListComponent implements OnInit, OnChanges {
 
   private movies: Array<Object>;
 
-  constructor(private _http: Http) {
+  constructor(private _http: Http, private _movieService: MovieService) {
     this.movies = []
   }
 
@@ -39,14 +40,13 @@ export class MovieListComponent implements OnInit, OnChanges {
   }
 
 
-  private addMovie(movieId: number):void{
-    this.movies.forEach((movie, index) => {
-      if(movie['id'] === movieId){
+  private addMovie(movieId: String):void{
+    this._movieService.addMovie(movieId);
 
-        this.movies.splice(index,1);
-      }
-    })
-    
+    this.movies = this.movies.filter(movie =>{
+      return movie['id'] !== movieId;
+    });
+
   }
 
 
