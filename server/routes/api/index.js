@@ -30,6 +30,7 @@ router.get('/search', (req, res) => {
 })
 
 router.get('/fav', (req, res) => {
+  console.log('in get fav ');
   let movieInfo = []
   favMovies.forEach(movieId => {
     imdb.getById(movieId).then(movie => {
@@ -43,9 +44,12 @@ router.get('/fav', (req, res) => {
         'metascore': movie.metascore,
         'imdburl': movie.imdburl
       })
+
     })
 
   })
+
+  res.json(movieInfo)
 })
 
 

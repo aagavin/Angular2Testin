@@ -23,7 +23,6 @@ export class MovieListComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     let query: String = typeof this.query !== 'undefined' ? this.query : '';
-    console.log('the query in list is: '+query);
     
     if (query != '') {
       this._http.get('/api/search?q=' + query).subscribe(
