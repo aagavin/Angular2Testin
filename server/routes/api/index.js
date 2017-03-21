@@ -1,6 +1,9 @@
-let express = require('express');
-let request = require('request');
-let router = express.Router();
+const express = require('express');
+const request = require('request');
+const router = express.Router();
+const imdb = require('imdb-api');
+
+let favMovies = []
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -16,7 +19,7 @@ router.get('/search', (req, res) => {
     request.get(`https://v2.sg.media-imdb.com/suggests/${query[0]}/${encodeURIComponent(query)}.json`, (error, response, body) => {
       let jsonResponse = body.replace(`imdb$${query}(`, '')
       jsonResponse = jsonResponse.substring(0, jsonResponse.length - 1);
-      
+
       res.status(200).json(parseResponse(jsonResponse))
     })
   }
@@ -24,6 +27,30 @@ router.get('/search', (req, res) => {
     res.sendStatus(200).json({ 'error': true })
   }
 
+})
+
+router.get('/fav', (req, res) => {
+  let movieInfo = []
+  favMovies.forEach(movieId => {
+    imdb.getById(movieId).then(movie => {
+      movieInfo.push({
+        'title': movie.title,
+        'rated': movie.rated,
+        'released': movie.released,
+        'actors': movie.actors,
+        'plot': movie.plot,
+        'poster': movie.poster,
+        'metascore': movie.metascore,
+        'imdburl': movie.imdburl
+      })
+    })
+
+  })
+})
+
+
+router.post('/add/:id', (req, res) => {
+  favMovies.push(req.params.id)
 })
 
 
