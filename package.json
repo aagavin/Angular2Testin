@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "prestart": "ng build",
+    "preinstall": "npm install -g @angular/cli && ng build --prod -aot",
     "start": "node server.js",
     "watch": "ng build; nodemon",
     "build": "ng build",
@@ -54,5 +54,9 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
     "typescript": "~2.0.0"
+  },
+  "engines": {
+    "node": "^7.1.1",
+    "npm": "^4.4.4"
   }
 }
