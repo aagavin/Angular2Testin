@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "preinstall": "npm install typescript && npm install -g @angular/cli && npm install && ng build --prod -aot",
+    "preinstall": "npm install typescript && npm install @angular/cli",
+    "install": "ng build --prod -aot",
     "start": "node server.js",
     "watch": "ng build; nodemon",
     "build": "ng build",
