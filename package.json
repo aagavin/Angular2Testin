@@ -4,7 +4,6 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "preinstall": "npm install typescript && npm install @angular/cli",
     "install": "ng build --prod -aot",
     "start": "node server.js",
     "watch": "ng build; nodemon",
@@ -15,6 +14,8 @@
   },
   "private": true,
   "dependencies": {
+    "typescript": "~2.0.0",
+    "@angular/cli": "^1.0.0-rc.2",
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",
