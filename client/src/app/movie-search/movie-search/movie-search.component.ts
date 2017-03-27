@@ -14,7 +14,7 @@ export class MovieSearchComponent implements OnInit {
 
   ngOnInit() {}
 
-  private movieSearch(event){
+  public movieSearch(event){
     console.log(event.target.value);
     this.searchQuery = event.target.value;
   }
