@@ -12,7 +12,7 @@ export class MovieListComponent implements OnInit, OnChanges {
   @Input()
   public query: String;
 
-  private movies: Array<Object>;
+  public movies: Array<Object>;
 
   constructor(private _http: Http, private _movieService: MovieService) {
     this.movies = []

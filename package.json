@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "install": "ng build --prod -aot",
+    "postinstall": "ng build --prod -aot",
     "start": "node server.js",
     "watch": "ng build; nodemon",
     "build": "ng build",
